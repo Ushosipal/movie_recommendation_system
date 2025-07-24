@@ -1,0 +1,92 @@
+/* Moving animated gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #68787c, #caccce, #0a161b, #405258);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #fff;
+    text-align: center;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Headline */
+h1 {
+    margin-top: 40px;
+    font-size: 36px;
+    color: #efecec;
+}
+
+/* Form styling */
+form {
+    margin: 30px auto;
+}
+
+select, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    width: 280px;
+}
+
+select {
+    background-color: #ffffff;
+    color: #333;
+}
+
+select:hover{
+    background-color: #aea5a6;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8b0311;
+}
+
+/* Movie container layout */
+.movie-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* Individual movie card */
+.movie {
+    margin: 15px;
+    text-align: center;
+}
+
+.movie img {
+    width: 180px;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.movie img:hover {
+    transform: scale(1.05);
+}
+
+.movie-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #f1f1f1;
+}
