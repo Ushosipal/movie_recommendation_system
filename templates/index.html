@@ -6,8 +6,9 @@
 
 </head>
 <body>
-    <h1>Movie Recommendation System</h1>
-     <form method="POST">
+    <div class="card">
+        <h1>Movie Recommendation System</h1>
+        <form method="POST">
             <select name="movie" required>
                 <option value="" disabled selected>Please select a movie</option>
                 {% for name in movie_names %}
@@ -16,17 +17,18 @@
             </select><br>
             <button type="submit">Recommend</button>
         </form>
+    </div>
 
     {% if combined %}
-  <div class="movie-container">
-    {% for name, poster in combined %}
-      <div class="movie">
-        <img src="{{ poster }}" alt="{{ name }}">
-        <div class="movie-title">{{ name }}</div>
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
-
+    <div class="movie-container">
+        {% for name, poster in combined %}
+        <div class="movie">
+            <img src="{{ poster }}" alt="{{ name }}">
+            <div class="movie-title">{{ name }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </body>
+
 </html>
