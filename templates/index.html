@@ -3,11 +3,10 @@
 <head>
     <title>Movie Recommendation</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
     <div class="card">
-        <h1>Movie Recommendation System</h1>
+        <h1>🎬 Movie Recommendation System</h1>
         <form method="POST">
             <select name="movie" required>
                 <option value="" disabled selected>Please select a movie</option>
@@ -21,14 +20,16 @@
 
     {% if combined %}
     <div class="movie-container">
-        {% for name, poster in combined %}
+        {% for name, poster, trailer in combined %}
         <div class="movie">
             <img src="{{ poster }}" alt="{{ name }}">
-            <div class="movie-title">{{ name }}</div>
+            <div class="movie-info">
+                <div class="movie-title">{{ name }}</div>
+                <a href="{{ trailer }}" target="_blank" class="trailer-btn">🎥 Watch Trailer</a>
+            </div>
         </div>
         {% endfor %}
     </div>
     {% endif %}
 </body>
-
 </html>

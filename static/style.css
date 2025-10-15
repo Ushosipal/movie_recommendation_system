@@ -118,3 +118,23 @@ button:hover {
     font-size: 16px;
     color: #f1f1f1;
 }
+
+.trailer-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.trailer-btn:hover {
+    background: rgba(255, 0, 0, 1);
+    transform: scale(1.05);
+}
