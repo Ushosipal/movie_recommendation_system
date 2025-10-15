@@ -57,7 +57,6 @@ import pickle
 import pandas as pd
 import requests
 import os
-import gdown
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -65,18 +64,19 @@ load_dotenv()
 OMDB_API_KEY = os.getenv("OMDB_API_KEY")
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
-print("OMDB_KEY:", OMDB_API_KEY)
-print("YOUTUBE_KEY:", YOUTUBE_API_KEY)
-
 
 app = Flask(__name__)
 
 MOVIE_PATH = "movie_dict.pkl"
 SIM_PATH = "similarity.pkl"
-SIM_ID = "1Iji_peOVfBKg7YP7icEJKMsi7Sl1nJex"
+SIM_ID = "https://github.com/Ushosipal/movie_recommendation_system/releases/download/v1.0/similarity.pkl"
 
 if not os.path.exists(SIM_PATH):
-    gdown.download(f"https://drive.google.com/uc?id={SIM_ID}", SIM_PATH, quiet=False)
+    print("🔽 Downloading similarity.pkl from GitHub Releases...")
+    urllib.request.urlretrieve(SIM_URL, SIM_PATH)
+    print("✅ Download complete from GitHub.")
+else:
+    print("✅ similarity.pkl already exists locally.")
 
 movies_dict = pickle.load(open(MOVIE_PATH, 'rb'))
 movies = pd.DataFrame(movies_dict)
