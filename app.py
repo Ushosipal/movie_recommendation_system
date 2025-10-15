@@ -70,7 +70,7 @@ app = Flask(__name__)
 
 MOVIE_PATH = "movie_dict.pkl"
 SIM_PATH = "similarity.pkl"
-SIM_ID = "https://github.com/Ushosipal/movie_recommendation_system/releases/download/v1.0/similarity.pkl"
+SIM_URL = "https://github.com/Ushosipal/movie_recommendation_system/releases/download/v1.0/similarity.pkl"
 
 if not os.path.exists(SIM_PATH):
     print("🔽 Downloading similarity.pkl from GitHub Releases...")
